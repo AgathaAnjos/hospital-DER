@@ -298,110 +298,192 @@ Internação {
 INSERT INTO Especialidade (nome_especialidade, status)
 VALUES 
 ('Pediatria', 1),
+
 ('Clínica Geral', 1),
+
 ('Gastrenterologia', 1),
+
 ('Dermatologia', 1),
+
 ('Cardiologia', 1),
+
 ('Ortopedia', 1),
+
 ('Neurologia', 1);
 
 INSERT INTO Medicos (nome, telefone, aceita_whatsapp, email, id_especialidade, enfermeiro, em_atividade)
 VALUES
 ('Dr. João Silva', 11987654321, TRUE, 'joao.silva@hospital.com', 1, 'Enf. Carla', TRUE),
+
 ('Dra. Mariana Souza', 11976543210, TRUE, 'mariana.souza@hospital.com', 2, 'Enf. Pedro', TRUE),
+
 ('Dr. Carlos Lima', 11965432109, FALSE, 'carlos.lima@hospital.com', 3, 'Enf. Ana', TRUE),
+
 ('Dra. Fernanda Costa', 11954321098, TRUE, 'fernanda.costa@hospital.com', 4, 'Enf. Lucas', TRUE),
+
 ('Dr. Roberto Almeida', 11943210987, FALSE, 'roberto.almeida@hospital.com', 5, 'Enf. Julia', TRUE),
+
 ('Dra. Paula Mendes', 11932109876, TRUE, 'paula.mendes@hospital.com', 6, 'Enf. Rafael', TRUE),
+
 ('Dr. Eduardo Rocha', 11921098765, TRUE, 'eduardo.rocha@hospital.com', 7, 'Enf. Camila', TRUE),
+
 ('Dra. Laura Fernandes', 11910987654, TRUE, 'laura.fernandes@hospital.com', 1, 'Enf. Bruno', TRUE),
+
 ('Dr. Henrique Martins', 11909876543, FALSE, 'henrique.martins@hospital.com', 2, 'Enf. Sofia', TRUE),
+
 ('Dra. Renata Ribeiro', 11998765432, TRUE, 'renata.ribeiro@hospital.com', 3, 'Enf. Thiago', TRUE);
 
 INSERT INTO Paciente (CPF, RG, nome, email, telefone, aceita_whatsapp, id_convenio)
 VALUES
 (11111111111, 12345678, 'Ana Paula', 'ana.paula@email.com', 11987654321, TRUE, 1),
+
 (22222222222, 23456789, 'Carlos Eduardo', 'carlos.edu@email.com', 11976543210, FALSE, 2),
+
 (33333333333, 34567890, 'Mariana Lima', 'mariana.lima@email.com', 11965432109, TRUE, 3),
+
 (44444444444, 45678901, 'João Pedro', 'joao.pedro@email.com', 11954321098, TRUE, 1),
+
 (55555555555, 56789012, 'Fernanda Rocha', 'fernanda.rocha@email.com', 11943210987, FALSE, 2),
+
 (66666666666, 67890123, 'Lucas Martins', 'lucas.martins@email.com', 11932109876, TRUE, 3),
+
 (77777777777, 78901234, 'Paula Fernandes', 'paula.fernandes@email.com', 11921098765, TRUE, 4),
+
 (88888888888, 89012345, 'Eduardo Ribeiro', 'eduardo.ribeiro@email.com', 11910987654, FALSE, 4),
+
 (99999999999, 90123456, 'Renata Costa', 'renata.costa@email.com', 11909876543, TRUE, 1),
+
 (10101010101, 12345670, 'Thiago Souza', 'thiago.souza@email.com', 11998765432, TRUE, 2),
+
 (12121212121, 23456701, 'Sofia Almeida', 'sofia.almeida@email.com', 11987654320, TRUE, 3),
+
 (13131313131, 34567012, 'Bruno Lima', 'bruno.lima@email.com', 11976543211, FALSE, 4),
+
 (14141414141, 45670123, 'Camila Rocha', 'camila.rocha@email.com', 11965432100, TRUE, 1),
+
 (15151515151, 56701234, 'Rafael Martins', 'rafael.martins@email.com', 11954321090, TRUE, 2),
+
 (16161616161, 67812345, 'Julia Fernandes', 'julia.fernandes@email.com', 11943210980, TRUE, 3);
+
 
 INSERT INTO Convenio (aceita_convênio, tempo_carência)
 VALUES
 (TRUE, 30),
+
 (TRUE, 60),
+
 (FALSE, 0),
+
 (TRUE, 90);
+
 
 INSERT INTO Medicaçao (nome_medicamento)
 VALUES
 ('Dipirona'),
+
 ('Paracetamol'),
+
 ('Ibuprofeno'),
+
 ('Amoxicilina'),
+
 ('Omeprazol'),
+
 ('Ranitidina'),
+
 ('Loratadina'),
+
 ('Metformina'),
+
 ('Losartana'),
+
 ('Cloridrato de Sertralina');
+
 
 INSERT INTO Receita (data_emissão, id_medicamento)
 VALUES
-('2025-01-10', 1),
-('2025-01-10', 2),
-('2025-05-20', 3),
-('2025-05-20', 4),
-('2025-08-15', 5),
-('2025-08-15', 6),
-('2025-02-11', 7),
-('2025-02-11', 8),
-('2025-07-19', 9),
-('2025-07-19', 10);
+('2019-01-10', 1),
+
+('2019-01-10', 2),
+
+('2020-05-20', 3),
+
+('2020-05-20', 4),
+
+('2018-08-15', 5),
+
+('2018-08-15', 6),
+
+('2021-02-11', 7),
+
+('2021-02-11', 8),
+
+('2016-07-19', 9),
+
+('2016-07-19', 10);
+
+
 
 INSERT INTO Consultas (crm_médico, cpf_paciente, id_especialidade, id_convênio, data_hora, valor_consulta, id_receita)
 VALUES
-(101, 11111111111, 1, 1, '2025-02-10 09:00', 200, 1),
-(102, 22222222222, 2, 2, '2025-03-15 10:30', 250, 2),
-(103, 33333333333, 3, 3, '2025-06-20 14:00', 300, 3),
-(104, 44444444444, 4, 1, '2025-07-22 08:30', 220, 4),
-(105, 55555555555, 5, 2, '2025-09-10 11:00', 280, 5),
-(106, 66666666666, 6, 3, '2025-01-15 15:00', 260, 6),
-(107, 77777777777, 7, 4, '2025-03-18 09:45', 240, 7),
-(108, 88888888888, 1, 4, '2025-04-10 10:15', 210, 8),
-(109, 99999999999, 2, 1, '2025-05-12 13:30', 230, 9),
-(110, 10101010101, 3, 2, '2025-06-14 16:00', 270, 10),
+(101, 11111111111, 1, 1, '2015-02-10 09:00', 200, 1),
+
+(102, 22222222222, 2, 2, '2016-03-15 10:30', 250, 2),
+
+(103, 33333333333, 3, 3, '2017-06-20 14:00', 300, 3),
+
+(104, 44444444444, 4, 1, '2018-07-22 08:30', 220, 4),
+
+(105, 55555555555, 5, 2, '2019-09-10 11:00', 280, 5),
+
+(106, 66666666666, 6, 3, '2020-01-15 15:00', 260, 6),
+
+(107, 77777777777, 7, 4, '2021-03-18 09:45', 240, 7),
+
+(108, 88888888888, 1, 4, '2015-04-10 10:15', 210, 8),
+
+(109, 99999999999, 2, 1, '2016-05-12 13:30', 230, 9),
+
+(110, 10101010101, 3, 2, '2017-06-14 16:00', 270, 10),
+
 -- repetir para completar 20 consultas, garantindo que alguns pacientes tenham mais de uma consulta
-(101, 11111111111, 1, 1, '2025-02-10 09:00', 200, 1),
-(102, 22222222222, 2, 2, '2025-03-15 10:30', 250, 2),
-(103, 33333333333, 3, 3, '2025-06-20 14:00', 300, 3),
-(104, 44444444444, 4, 1, '2025-07-22 08:30', 220, 4),
-(105, 55555555555, 5, 2, '2025-09-10 11:00', 280, 5),
-(106, 66666666666, 6, 3, '2025-01-15 15:00', 260, 6),
-(107, 77777777777, 7, 4, '2025-03-18 09:45', 240, 7),
-(108, 88888888888, 1, 4, '2025-04-10 10:15', 210, 8),
-(109, 99999999999, 2, 1, '2025-05-12 13:30', 230, 9),
-(110, 10101010101, 3, 2, '2025-06-14 16:00', 270, 10);
+(101, 11111111111, 1, 1, '2018-02-10 09:00', 200, 1),
+
+(102, 22222222222, 2, 2, '2019-03-15 10:30', 250, 2),
+
+(103, 33333333333, 3, 3, '2020-06-20 14:00', 300, 3),
+
+(104, 44444444444, 4, 1, '2021-07-22 08:30', 220, 4),
+
+(105, 55555555555, 5, 2, '2016-09-10 11:00', 280, 5),
+
+(106, 66666666666, 6, 3, '2017-01-15 15:00', 260, 6),
+
+(107, 77777777777, 7, 4, '2018-03-18 09:45', 240, 7),
+
+(108, 88888888888, 1, 4, '2019-04-10 10:15', 210, 8),
+
+(109, 99999999999, 2, 1, '2020-05-12 13:30', 230, 9),
+
+(110, 10101010101, 3, 2, '2021-06-14 16:00', 270, 10);
+
 
 INSERT INTO Quarto (id_paciente, info_paciente, tipo_quarto, valor_quarto, descrição_quarto)
 VALUES
 (11111111111, 'Paciente Ana Paula', 'Apartamento', 500, 'Quarto individual com banheiro privativo'),
+
 (22222222222, 'Paciente Carlos Eduardo', 'Quarto Duplo', 300, 'Quarto compartilhado com 2 camas'),
+
 (33333333333, 'Paciente Mariana Lima', 'Enfermaria', 150, 'Quarto coletivo com 4 camas'),
+
 (44444444444, 'Paciente João Pedro', 'Apartamento', 500, 'Quarto individual com banheiro privativo'),
+
 (55555555555, 'Paciente Fernanda Rocha', 'Quarto Duplo', 300, 'Quarto compartilhado com 2 camas'),
+
 (66666666666, 'Paciente Lucas Martins', 'Enfermaria', 150, 'Quarto coletivo com 4 camas'),
+
 (77777777777, 'Paciente Paula Fernandes', 'Apartamento', 500, 'Quarto individual com banheiro privativo');
+
 
 INSERT INTO Enfermeiro (nome, coren, cpf)
 VALUES
